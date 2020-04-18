@@ -1,0 +1,22 @@
+
+<h2>Guides</h2>
+
+<hr>
+
+
+
+  <div>
+    <% @guides.each do |guide| %>
+      <div>
+        <p><%= guide.title %></p>
+        <p><%= guide.body %></p>
+        <p><%= link_to 'Show', guide %></p>
+        <p><%= link_to 'Edit', edit_guide_path(guide) %></p>
+        <p><%= link_to 'Destroy', guide, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Guide', new_guide_path %>

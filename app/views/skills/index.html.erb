@@ -1,0 +1,22 @@
+
+<h2>Skills</h2>
+
+<hr>
+
+
+
+  <div>
+    <% @skills.each do |skill| %>
+      <div>
+        <p><%= skill.title %></p>
+        <p><%= skill.percent %></p>
+        <p><%= link_to 'Show', skill %></p>
+        <p><%= link_to 'Edit', edit_skill_path(skill) %></p>
+        <p><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Skill', new_skill_path %>
