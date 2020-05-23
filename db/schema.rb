@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_162718) do
+ActiveRecord::Schema.define(version: 2020_05_23_204445) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "status", default: 0
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
   end
 
