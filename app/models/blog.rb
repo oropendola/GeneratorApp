@@ -13,4 +13,10 @@ class Blog < ApplicationRecord
 
     scope :ruby_tricks_blog_items, -> { where(title: "ruby tricks") }
 
+    after_initialize :set_defaults
+
+    def set_defaults
+       self.topic_id ||= 1
+    end
+
 end
