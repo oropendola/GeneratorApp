@@ -1,5 +1,10 @@
 class Portfolio < ApplicationRecord
 
+    has_many :technologies
+
+    accepts_nested_attributes_for :technologies, 
+                                 reject_if: lambda {|attrs| attrs['name'].blank?}
+
 	after_initialize :set_defaults
 
 	def set_defaults
