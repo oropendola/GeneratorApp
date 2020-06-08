@@ -19,4 +19,8 @@ class Blog < ApplicationRecord
        self.topic_id ||= 1
     end
 
+    def self.special_blogs
+       limit(2)
+    end
+
 end
