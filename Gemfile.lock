@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/oropendola/my_company_view_tool
+  revision: 2bf26fdf33748e9d8a567035ac7affa31701770b
+  specs:
+    my_company_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -211,6 +217,7 @@ DEPENDENCIES
   devise (~> 4.2)
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.7)
+  my_company_view_tool!
   pry-byebug
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)

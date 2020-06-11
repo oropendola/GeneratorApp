@@ -27,4 +27,8 @@ module ApplicationHelper
     end
   end
 
+  def copyright_generator
+    MyCompanyViewTool::Renderer.copyright "Senior nor", "All rights reserved"
+  end
+
 end
