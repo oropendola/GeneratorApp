@@ -3,5 +3,5 @@
 <p><%= portfolio_item.subtitle %></p>
 <p><%= portfolio_item.body %></p>
 <%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %>
-<%= link_to "Editar portafolio", edit_portfolio_url(portfolio_item) %>
-<%= link_to "Borrar", portfolio_path(portfolio_item), method: :delete, data: { confirm: "Esta seguro ?" } %>
+<%= link_to "Editar portafolio", edit_portfolio_url(portfolio_item) if logged_in?(:site_admin) %>
+<%= link_to "Borrar", portfolio_path(portfolio_item), method: :delete, data: { confirm: "Esta seguro ?" } if logged_in?(:site_admin)%>
