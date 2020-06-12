@@ -47,3 +47,4 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'my_company_view_tool', git: 'https://github.com/oropendola/my_company_view_tool'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
