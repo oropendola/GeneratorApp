@@ -162,3 +162,18 @@ body {
 }
 
 
+
+/*
+ * My custom style
+ *
+ * Sobreescribo la clase card-block para cambiar el color a negro
+ */
+
+.card-block {
+  color: black;
+  text-align: left;
+}
+
+.auth-link a {
+  color:black;
+}
