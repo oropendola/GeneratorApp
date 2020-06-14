@@ -6,8 +6,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    #@blogs = Blog.all
-    @blogs = Blog.special_blogs
+    @blogs = Blog.page(params[:page]).per(5)
+    #@blogs = Blog.special_blogs
     #byebug
     #puts '*' * 42
     #puts @blogs.inspect
