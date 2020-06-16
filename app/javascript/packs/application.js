@@ -17,6 +17,10 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 //= require jquery3
+//= require jquery-ui
+//= require html.sortable
 //= require popper
 //= require bootstrap
 //= require bootstrap-sprockets
+
+
