@@ -1324,24 +1324,28 @@ ready = function() {
     // Cuando se cambia la configuracion de los elementos con drag & drop
     // se llama
 
-    sortable('.sortable')[0].addEventListener('sortupdate', function(e, idx) {
+    var sort_obj = sortable('.sortable')
 
-       var updated_order = [];
+    if (sort_obj.length > 0) {
 
-       set_positions();
+      sort_obj[0].addEventListener('sortupdate', function(e, idx) {
 
-       var cards = Array.from(document.getElementsByClassName('card'));
+        var updated_order = [];
 
-       // Guardamos en un array el id y posicion de dada elemento
+        set_positions();
 
-       cards.forEach(function(card,index) {
+        var cards = Array.from(document.getElementsByClassName('card'));
 
-         var obj = {
-          id: card.getAttribute('data-item'),
-          position: index + 1
-         };
+        // Guardamos en un array el id y posicion de dada elemento
 
-         updated_order.push(obj);
+        cards.forEach(function(card,index) {
+
+          var obj = {
+            id: card.getAttribute('data-item'),
+            position: index + 1
+          };
+
+          updated_order.push(obj);
 
         });
 
@@ -1370,7 +1374,7 @@ ready = function() {
 
         console.log("Orden actualizado : " + json)
     });
-
+  }
     return;
 
 }
