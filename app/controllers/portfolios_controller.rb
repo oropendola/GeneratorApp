@@ -1,3 +1,5 @@
+require 'json'
+
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit,:update,:destroy, :show]
   layout "portfolio"
@@ -6,6 +8,29 @@ class PortfoliosController < ApplicationController
 	def index
 	  @portfolio_items = Portfolio.by_position
 	end
+
+  def sort
+    
+    in_hash = JSON.parse(params[:order])
+    
+    #byebug
+
+    in_hash.each do |key,value|
+       
+       the_id = value[:id]
+       the_pos = value[:position]
+
+       puts "Actualizando Id : #{the_id} Posicion : #{the_pos}"
+
+       Portfolio.find(the_id).update(position,the_pos)
+
+    end
+
+    # Como la ruta a sort es una accion que no necesita view, con lo siguiente 
+    # le indicamos a rails que o tiene que buscar una pagina sort en views
+    render nothing: true
+
+  end
 
 	def new 
 		@portfolio_item = Portfolio.new

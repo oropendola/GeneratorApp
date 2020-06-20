@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   #get 'pages/about'
   #get 'pages/contact'
 
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do 
+     # con este aniadido incluimos la ruta sort
+     put :sort, on: :collection
+  end
 
 
   get "portfolio/:id", to: "portfolios#show", as: "portfolio_show"

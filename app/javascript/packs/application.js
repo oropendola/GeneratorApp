@@ -1289,17 +1289,89 @@ var sortable = (function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var ready = undefined;
 
+var set_positions = undefined;
+
+
+// Asocia al atributo data-pos el indice de orden en el DOM
+
+set_positions = function() {
+
+  var cards = Array.from(document.getElementsByClassName('card'))
+
+  cards.forEach(function(card,index) {
+
+     var pos = index + 1
+
+     card.setAttribute("data-pos", pos)
+
+   });
+
+}
+
+// Se llama al cargar la pagina
+
 ready = function() {
 	
    // document.querySelector('.sortable').sortable();
+
+    set_positions();
 
   	sortable('.sortable', {
 		  forcePlaceholderSize: true,
 		  placeholderClass: 'container',
 		});
 
+    // Cuando se cambia la configuracion de los elementos con drag & drop
+    // se llama
 
-  return;
+    sortable('.sortable')[0].addEventListener('sortupdate', function(e, idx) {
+
+       var updated_order = [];
+
+       set_positions();
+
+       var cards = Array.from(document.getElementsByClassName('card'));
+
+       // Guardamos en un array el id y posicion de dada elemento
+
+       cards.forEach(function(card,index) {
+
+         var obj = {
+          id: card.getAttribute('data-item'),
+          position: index + 1
+         };
+
+         updated_order.push(obj);
+
+        });
+
+        // Enviamos al servidor los datos recopilados
+
+        var url = '/portfolios/sort';
+
+        var httpRequest = new XMLHttpRequest();
+
+        httpRequest.onreadystatechange = function(data) {
+
+          if(this.readyState == 4 && this.status == 200) {
+            console.log("Respuesta del servidor : " + httpRequest.responseText)
+          }
+        };
+
+        var json = JSON.stringify(updated_order)
+
+        httpRequest.open('PUT',url);
+
+        httpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+     
+        // httpRequest.send('order=' + encodeURIComponent(updated_order));
+
+        httpRequest.send('order=' + encodeURIComponent(json));
+
+        console.log("Orden actualizado : " + json)
+    });
+
+    return;
 
 }
 
