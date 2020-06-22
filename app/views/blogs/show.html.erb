@@ -1,6 +1,7 @@
 <div class="col-sm-8 blog-main">
 
   <h2><%= @blog.title %></h2>
+  <div><%= @blog.body %></div>
   <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> 
 
 </div><!-- /.blog-main -->
