@@ -24,6 +24,9 @@ module GeneratorApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # Incluimos el path a lib 
+    config.eager_load_paths << "#{Rails.root}/lib"
+
     #config.action_controller.permit_all_parameters = true
 
     # Settings in config/environments/* take precedence over those specified here.
