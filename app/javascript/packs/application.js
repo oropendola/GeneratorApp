@@ -29,6 +29,7 @@ require("channels")
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require cocoon
+//= require gritter
 
 
 
