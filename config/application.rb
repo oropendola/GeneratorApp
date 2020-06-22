@@ -26,6 +26,7 @@ module GeneratorApp
 
     # Incluimos el path a lib 
     config.eager_load_paths << "#{Rails.root}/lib"
+    config.eager_load_paths << "#{Rails.root}/lib/tasks"
 
     #config.action_controller.permit_all_parameters = true
 
