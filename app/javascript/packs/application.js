@@ -25,11 +25,13 @@ require("channels")
 //= require jquery-ui
 //= require html.sortable
 //= require portfolios
+//= require gritter
+//= require cable
+//= require cocoon
 //= require popper
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require cocoon
-//= require gritter
+//= require_tree .
 
 
 

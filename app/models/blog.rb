@@ -7,6 +7,8 @@ class Blog < ApplicationRecord
 
     belongs_to :topic
 
+    has_many :comments
+
     def self.huaei
       where(title:"Huaei")
     end
