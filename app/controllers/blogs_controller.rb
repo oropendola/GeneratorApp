@@ -6,14 +6,20 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    # Mostrar solo los blog published si no soy el admin
+    if logged_in?(:site_admin)
+      @blogs = Blog.recent.page(params[:page]).per(5)
+    else
+      @blogs = Blog.recent.published.page(params[:page]).per(5)
+    end
+    @page_title = "My Portfolio Blog"
     #@blogs = Blog.special_blogs
     #byebug
     #puts '*' * 42
     #puts @blogs.inspect
     #puts '*' * 42
     #@blogs = Blog.all
-    @page_title = "My Portfolio Blog"
+ 
     #@blogs = Blog.huaei
     #@blogs = Blog.ruby_tricks_blog_items
 
