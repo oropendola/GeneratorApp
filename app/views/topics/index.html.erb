@@ -1,21 +1,11 @@
 
-<h2>Topics</h2>
 
-<hr>
+<div class="col-sm-8 blog-main">
 
+  <h1>Topics</h1>
 
+  <%= render @topics %>
 
-  <div>
-    <% @topics.each do |topic| %>
-      <div>
-        <p><%= topic.title %></p>
-        <p><%= link_to 'Show', topic %></p>
-        <p><%= link_to 'Edit', edit_topic_path(topic) %></p>
-        <p><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
-    <% end %>
 </div>
 
-<br>
 
-<%= link_to 'New Topic', new_topic_path %>
