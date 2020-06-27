@@ -10,7 +10,25 @@
 
 			<%= image_tag "reyezuelo.jpg", width: 500, alt: "profile image", class: 'profile-img' %>
 
+		    <div class='skills'>
+		    	<% @skills.each do |skill| %>
+		    	<div class='skill'>
+			    	<h4><%= skill.title %></h4>
+			    	<div class='progress'>
+			    		<div class='progress-bar progress-bar-striped bg-warning'
+			    		role='progress-bar'
+			    		aria-valuenow="<%= skill.percent %>"
+			    		aria-valuemax='100'
+			    		style="width: <%= skill.percent %>%">
+			    		</div>
+			    	</div>
+		        </div>
+		    	<% end %>
+		    </div>
+
 	    </div>
+
+
 	    <div class="col-md-4">
 			<p>Developer with skills in web design, javascript, React, Vue and Ruby On Rails. 10 years of experience in international projects</p>
 		</div>
