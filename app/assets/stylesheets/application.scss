@@ -227,7 +227,11 @@ body {
    padding: 30px;
  }
 
- .blogcrumb {
-  font-size: 1.25rem;
+ .blogcrumb a {
+  font-size: 1.25em;
   margin: 0px 10px 0px 10px;
+ }
+
+ .blog-sidebar-source {
+   margin-top: 20px;
  }

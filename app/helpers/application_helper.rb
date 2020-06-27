@@ -20,10 +20,10 @@ module ApplicationHelper
 
   end
 
-  def source_helper(layout_name)
+  def source_helper(styles)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]}. You're in #{layout_name}"
-      content_tag(:p, greeting,class: "my-source-helper-class")
+      greeting = "Thanks for visiting me from #{session[:source]}. Please contact me in  #{link_to 'Contact me', contact_path} if you like to work together"
+      content_tag(:div, greeting.html_safe,class: styles)
     end
   end
 
