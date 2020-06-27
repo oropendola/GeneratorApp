@@ -235,3 +235,23 @@ body {
  .blog-sidebar-source {
    margin-top: 20px;
  }
+
+ .app-card-container {
+   color: black;
+   text-align: left;
+   padding: 30px;
+ }
+
+ .app-card-container > .card {
+   padding: 40px;
+ }
+
+ .profile-img {
+   border: 1px solid grey;
+   border-radius: 5%;
+ }
+
+.app-card-container a {
+   color: blue;
+}
+
