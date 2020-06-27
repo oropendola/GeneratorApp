@@ -5,7 +5,7 @@
   <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 
   <p>
-  <%= markdown(blog.body) %>
+  <%= markdown(blog.body) if ! blog.body.nil? %>
   </p>
 
 </div>
